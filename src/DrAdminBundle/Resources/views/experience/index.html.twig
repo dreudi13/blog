@@ -1,0 +1,47 @@
+{% extends 'DrAdminBundle::template/base.html.twig' %}
+
+{% block body %}
+    <h1>Experiences list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Company</th>
+                <th>Job</th>
+                <th>Detail</th>
+                <th>Startedat</th>
+                <th>Finishedat</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for experience in experiences %}
+            <tr>
+                <td><a href="{{ path('experience_show', { 'id': experience.id }) }}">{{ experience.id }}</a></td>
+                <td>{{ experience.company }}</td>
+                <td>{{ experience.job }}</td>
+                <td>{{ experience.detail }}</td>
+                <td>{% if experience.startedAt %}{{ experience.startedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if experience.finishedAt %}{{ experience.finishedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('experience_show', { 'id': experience.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('experience_edit', { 'id': experience.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('experience_new') }}">Create a new experience</a>
+        </li>
+    </ul>
+{% endblock %}

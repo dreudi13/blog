@@ -1,0 +1,47 @@
+dr_admin_article:
+    resource: "@DrAdminBundle/Resources/config/routing/article.yml"
+    prefix:   /article
+
+dr_admin_category:
+    resource: "@DrAdminBundle/Resources/config/routing/category.yml"
+    prefix:   /category
+
+dr_admin_image:
+    resource: "@DrAdminBundle/Resources/config/routing/image.yml"
+    prefix:   /image
+
+dr_admin_skill:
+    resource: "@DrAdminBundle/Resources/config/routing/skill.yml"
+    prefix:   /skill
+
+dr_admin_technology:
+    resource: "@DrAdminBundle/Resources/config/routing/technology.yml"
+    prefix:   /technology
+
+dr_admin_tool:
+    resource: "@DrAdminBundle/Resources/config/routing/tool.yml"
+    prefix:   /tool
+
+dr_admin_education:
+    resource: "@DrAdminBundle/Resources/config/routing/education.yml"
+    prefix:   /education
+
+dr_admin_experience:
+    resource: "@DrAdminBundle/Resources/config/routing/experience.yml"
+    prefix:   /experience
+
+dr_admin_info:
+    resource: "@DrAdminBundle/Resources/config/routing/info.yml"
+    prefix:   /info
+
+dr_admin_socialnetwork:
+    resource: "@DrAdminBundle/Resources/config/routing/socialnetwork.yml"
+    prefix:   /socialnetwork
+
+dr_admin_cv:
+    resource: "@DrAdminBundle/Resources/config/routing/cv.yml"
+    prefix:   /cv
+
+dradmin_home:
+    path:     /
+    defaults: { _controller: DrAdminBundle:Admin:home }

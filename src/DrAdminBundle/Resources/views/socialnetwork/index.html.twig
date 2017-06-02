@@ -1,0 +1,43 @@
+{% extends 'DrAdminBundle::template/base.html.twig' %}
+
+{% block body %}
+    <h1>Socialnetworks list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Link</th>
+                <th>Icon</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for socialNetwork in socialNetworks %}
+            <tr>
+                <td><a href="{{ path('socialnetwork_show', { 'id': socialNetwork.id }) }}">{{ socialNetwork.id }}</a></td>
+                <td>{{ socialNetwork.name }}</td>
+                <td>{{ socialNetwork.link }}</td>
+                <td>{{ socialNetwork.icon }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('socialnetwork_show', { 'id': socialNetwork.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('socialnetwork_edit', { 'id': socialNetwork.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('socialnetwork_new') }}">Create a new socialNetwork</a>
+        </li>
+    </ul>
+{% endblock %}

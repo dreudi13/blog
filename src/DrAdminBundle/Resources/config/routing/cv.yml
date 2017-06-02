@@ -1,0 +1,6 @@
+cv_index:
+    path:     /
+    defaults: { _controller: "DrAdminBundle:Cv:index" }
+    methods:  GET
+
+

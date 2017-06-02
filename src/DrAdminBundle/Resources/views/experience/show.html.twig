@@ -1,0 +1,48 @@
+{% extends 'DrAdminBundle::template/base.html.twig' %}
+
+{% block body %}
+    <h1>Experience</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ experience.id }}</td>
+            </tr>
+            <tr>
+                <th>Company</th>
+                <td>{{ experience.company }}</td>
+            </tr>
+            <tr>
+                <th>Job</th>
+                <td>{{ experience.job }}</td>
+            </tr>
+            <tr>
+                <th>Detail</th>
+                <td>{{ experience.detail }}</td>
+            </tr>
+            <tr>
+                <th>Startedat</th>
+                <td>{% if experience.startedAt %}{{ experience.startedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Finishedat</th>
+                <td>{% if experience.finishedAt %}{{ experience.finishedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('experience_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('experience_edit', { 'id': experience.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

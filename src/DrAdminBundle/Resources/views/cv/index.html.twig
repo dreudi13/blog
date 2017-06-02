@@ -1,0 +1,53 @@
+{% extends 'DrAdminBundle::template/base.html.twig' %}
+
+{% block body %}
+    <article class="cv">
+        <h1>Curiculum Vitae</h1>
+
+        <section class="row header">
+            <h2>Infos</h2>
+            <div class="infos">
+                {{ infos.firstName }} {{ infos.lastName }}  
+                {{ infos.city }}
+                <a href="tel:+33644772272"></a>06 44 77 22 72 - jason.tubiana@gmail.com
+            </div>
+            <a href="{{ path('info_index') }}">Modifer les infos</a>
+        </section>
+
+        <section class="row sub-header">
+            <div class="skill columns large-4">
+                <h2>Compétences</h2>
+                {% for skill in skills %}
+                <p>{{ skill.name }}</p>
+                {% endfor %}
+                <a href="{{ path('skill_index') }}"><button class="button">Modifier une compétence</button></a>
+            </div>
+
+            <div class="tool columns large-4">
+                <h2>Outils</h2>
+                {% for tool in tools %}
+                <p>{{ tool.name }}</p>
+                {% endfor %}
+                <p>
+                    {{ tools }}         
+                </p>
+                <a href="{{ path('tool_index') }}"><button class="button">Modifier un outil</button></a>
+            </div>
+
+            <div class="technology columns large-4">
+                <h2>Technologies</h2>
+                {% for technology in technologys %}
+                <p>{{ technology.name }}</p>
+                {% endfor %}
+                <a href="{{ path('technology_index') }}"><button class="button">Modifier une technologie </button></a>
+            </div>
+        </section>
+
+        <section class="experience">
+        </section>
+
+        <section class="education">
+        </section>
+    </article>
+{% endblock %}
+

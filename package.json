@@ -1,0 +1,31 @@
+{
+    "name": "dreudi13",
+    "version": "1.0.0",
+    "description": "Symfony Standard Edition ========================",
+    "main": "index.js",
+    "directories": {
+        "test": "tests"
+    },
+    "dependencies": {
+        "gulp": "^3.9.1"
+    },
+    "devDependencies": {
+        "browser-sync": "^2.12.7",
+        "gulp": "^3.9.1",
+        "gulp-autoprefixer": "^3.1.0",
+        "gulp-load-plugins": "^1.2.2",
+        "gulp-plumber": "^1.1.0",
+        "gulp-sass": "^2.3.1",
+        "gulp-sourcemaps": "^1.6.0"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+ssh://git@bitbucket.org/jason_tubiana/dreudi13.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "homepage": "https://bitbucket.org/jason_tubiana/dreudi13#readme"
+}

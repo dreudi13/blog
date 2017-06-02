@@ -1,0 +1,24 @@
+tool_index:
+    path:     /
+    defaults: { _controller: "DrAdminBundle:Tool:index" }
+    methods:  GET
+
+tool_show:
+    path:     /{id}/show
+    defaults: { _controller: "DrAdminBundle:Tool:show" }
+    methods:  GET
+
+tool_new:
+    path:     /new
+    defaults: { _controller: "DrAdminBundle:Tool:new" }
+    methods:  [GET, POST]
+
+tool_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "DrAdminBundle:Tool:edit" }
+    methods:  [GET, POST]
+
+tool_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "DrAdminBundle:Tool:delete" }
+    methods:  DELETE

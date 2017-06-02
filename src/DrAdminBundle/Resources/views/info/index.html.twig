@@ -1,0 +1,53 @@
+{% extends 'DrAdminBundle::template/base.html.twig' %}
+
+{% block body %}
+    <h1>Infos list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Title</th>
+                <th>Baseline</th>
+                <th>Street</th>
+                <th>City</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for info in infos %}
+            <tr>
+                <td><a href="{{ path('info_show', { 'id': info.id }) }}">{{ info.id }}</a></td>
+                <td>{{ info.firstName }}</td>
+                <td>{{ info.lastName }}</td>
+                <td>{{ info.title }}</td>
+                <td>{{ info.baseLine }}</td>
+                <td>{{ info.street }}</td>
+                <td>{{ info.city }}</td>
+                <td>{{ info.phone }}</td>
+                <td>{{ info.email }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('info_show', { 'id': info.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('info_edit', { 'id': info.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('info_new') }}">Create a new info</a>
+        </li>
+    </ul>
+{% endblock %}

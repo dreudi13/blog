@@ -1,0 +1,24 @@
+socialnetwork_index:
+    path:     /
+    defaults: { _controller: "DrAdminBundle:SocialNetwork:index" }
+    methods:  GET
+
+socialnetwork_show:
+    path:     /{id}/show
+    defaults: { _controller: "DrAdminBundle:SocialNetwork:show" }
+    methods:  GET
+
+socialnetwork_new:
+    path:     /new
+    defaults: { _controller: "DrAdminBundle:SocialNetwork:new" }
+    methods:  [GET, POST]
+
+socialnetwork_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "DrAdminBundle:SocialNetwork:edit" }
+    methods:  [GET, POST]
+
+socialnetwork_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "DrAdminBundle:SocialNetwork:delete" }
+    methods:  DELETE

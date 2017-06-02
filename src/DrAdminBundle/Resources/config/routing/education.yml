@@ -1,0 +1,24 @@
+education_index:
+    path:     /
+    defaults: { _controller: "DrAdminBundle:Education:index" }
+    methods:  GET
+
+education_show:
+    path:     /{id}/show
+    defaults: { _controller: "DrAdminBundle:Education:show" }
+    methods:  GET
+
+education_new:
+    path:     /new
+    defaults: { _controller: "DrAdminBundle:Education:new" }
+    methods:  [GET, POST]
+
+education_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "DrAdminBundle:Education:edit" }
+    methods:  [GET, POST]
+
+education_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "DrAdminBundle:Education:delete" }
+    methods:  DELETE

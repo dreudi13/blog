@@ -1,0 +1,24 @@
+technology_index:
+    path:     /
+    defaults: { _controller: "DrAdminBundle:Technology:index" }
+    methods:  GET
+
+technology_show:
+    path:     /{id}/show
+    defaults: { _controller: "DrAdminBundle:Technology:show" }
+    methods:  GET
+
+technology_new:
+    path:     /new
+    defaults: { _controller: "DrAdminBundle:Technology:new" }
+    methods:  [GET, POST]
+
+technology_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "DrAdminBundle:Technology:edit" }
+    methods:  [GET, POST]
+
+technology_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "DrAdminBundle:Technology:delete" }
+    methods:  DELETE

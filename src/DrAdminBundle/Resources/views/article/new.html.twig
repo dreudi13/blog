@@ -1,0 +1,28 @@
+{% extends 'DrAdminBundle::template/base.html.twig' %}
+
+{% block body %}
+    <div class="row">
+            <h1>Article creation</h1>
+    </div>
+
+    <div class="row">
+        <div class="columns large-8">
+            {{ form_start(form) }}
+                {{ form_widget(form) }}
+                <input type="submit" value="Create" />
+            {{ form_end(form) }}
+        </div>
+        <div class="columns large-4">
+            <h2>Ajouter une image</h2>
+            {{ dump() }}
+        </div>
+    </div>
+
+        <ul>
+            <li>
+                <a href="{{ path('article_index') }}">Back to the list</a>
+            </li>
+        </ul>
+    {{ tinymce_init() }}
+{% endblock %}
+

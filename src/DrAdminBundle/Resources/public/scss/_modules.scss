@@ -1,0 +1,24 @@
+// Form
+form{
+}
+
+// Cv
+.cv{
+    
+    .sub-header{
+
+        div{
+            //@include grid-column(1 of 3); 
+        }
+
+    }
+
+}
+
+.image{
+
+    img{
+        height: 50px;
+    }
+
+}

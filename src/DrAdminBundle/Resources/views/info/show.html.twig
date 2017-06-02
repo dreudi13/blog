@@ -1,0 +1,60 @@
+{% extends 'DrAdminBundle::template/base.html.twig' %}
+
+{% block body %}
+    <h1>Info</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ info.id }}</td>
+            </tr>
+            <tr>
+                <th>Firstname</th>
+                <td>{{ info.firstName }}</td>
+            </tr>
+            <tr>
+                <th>Lastname</th>
+                <td>{{ info.lastName }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ info.title }}</td>
+            </tr>
+            <tr>
+                <th>Baseline</th>
+                <td>{{ info.baseLine }}</td>
+            </tr>
+            <tr>
+                <th>Street</th>
+                <td>{{ info.street }}</td>
+            </tr>
+            <tr>
+                <th>City</th>
+                <td>{{ info.city }}</td>
+            </tr>
+            <tr>
+                <th>Phone</th>
+                <td>{{ info.phone }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ info.email }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('info_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('info_edit', { 'id': info.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

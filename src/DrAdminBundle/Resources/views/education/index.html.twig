@@ -1,0 +1,47 @@
+{% extends 'DrAdminBundle::template/base.html.twig' %}
+
+{% block body %}
+    <h1>Educations list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Qualification</th>
+                <th>School</th>
+                <th>Detail</th>
+                <th>Startedat</th>
+                <th>Finishedat</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for education in educations %}
+            <tr>
+                <td><a href="{{ path('education_show', { 'id': education.id }) }}">{{ education.id }}</a></td>
+                <td>{{ education.qualification }}</td>
+                <td>{{ education.school }}</td>
+                <td>{{ education.detail }}</td>
+                <td>{% if education.startedAt %}{{ education.startedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if education.finishedAt %}{{ education.finishedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('education_show', { 'id': education.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('education_edit', { 'id': education.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('education_new') }}">Create a new education</a>
+        </li>
+    </ul>
+{% endblock %}

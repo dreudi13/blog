@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Tools list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for tool in tools %}
+            <tr>
+                <td><a href="{{ path('tool_show', { 'id': tool.id }) }}">{{ tool.id }}</a></td>
+                <td>{{ tool.name }}</td>
+                <td>{{ tool.description }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('tool_show', { 'id': tool.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('tool_edit', { 'id': tool.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('tool_new') }}">Create a new tool</a>
+        </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,24 @@
+info_index:
+    path:     /
+    defaults: { _controller: "DrAdminBundle:Info:index" }
+    methods:  GET
+
+info_show:
+    path:     /{id}/show
+    defaults: { _controller: "DrAdminBundle:Info:show" }
+    methods:  GET
+
+info_new:
+    path:     /new
+    defaults: { _controller: "DrAdminBundle:Info:new" }
+    methods:  [GET, POST]
+
+info_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "DrAdminBundle:Info:edit" }
+    methods:  [GET, POST]
+
+info_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "DrAdminBundle:Info:delete" }
+    methods:  DELETE

@@ -1,0 +1,41 @@
+{% extends 'DrAdminBundle::template/base.html.twig' %}
+
+{% block body %}
+    <h1>Technologies list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for technology in technologies %}
+            <tr>
+                <td><a href="{{ path('technology_show', { 'id': technology.id }) }}">{{ technology.id }}</a></td>
+                <td>{{ technology.name }}</td>
+                <td>{{ technology.description }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('technology_show', { 'id': technology.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('technology_edit', { 'id': technology.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('technology_new') }}">Create a new technology</a>
+        </li>
+    </ul>
+{% endblock %}
