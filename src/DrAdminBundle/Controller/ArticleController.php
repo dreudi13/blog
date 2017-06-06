@@ -20,7 +20,7 @@ class ArticleController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $articles = $em->getRepository('DrAdminBundle:Article')->findAll();
+        $articles = $em->getRepository('DrAdminBundle:Article')->findLastOrderByDate();
 
         return $this->render('DrAdminBundle:article:index.html.twig', array(
             'articles' => $articles,

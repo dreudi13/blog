@@ -21,3 +21,4 @@ node_modules/
 web/vendor/
 web/bundles/vendor/
 **/*~
+.idea/
