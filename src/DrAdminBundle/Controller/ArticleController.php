@@ -5,6 +5,7 @@ namespace DrAdminBundle\Controller;
 use DrAdminBundle\Entity\Article;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Article controller.
@@ -121,5 +122,28 @@ class ArticleController extends Controller
             ->setMethod('DELETE')
             ->getForm()
         ;
+    }
+
+    /**
+     * Permet de changer le statut d'un article : 'publié' ou 'non publié'
+     *
+     * @param Request $request
+     * @return Response
+     */
+    public function publishAction(Request $request)
+    {
+        if ($request->isXmlHttpRequest()){
+            $em = $this->getDoctrine()->getManager();
+            $id = $request->get('id');
+            $article = $em->getRepository('DrAdminBundle:Article')->findOneBy(['id'=>$id]);
+            $status = $article->getStatus();
+            $status ?  $status = false :  $status = true;
+            $article->setStatus($status);
+            $em->flush();
+            return new Response('Article: ' . $article->getId() . ' => ' . $status);
+        } else {
+            return new Response("Erreur: Requpete invalide");
+        }
+
     }
 }

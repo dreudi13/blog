@@ -2,7 +2,7 @@
 
 {% block body %}
     <h1>Articles list</h1>
-
+    <a href="{{ path('article_new') }}" class="button">Create a new article</a>
     <table>
         <thead>
             <tr>
@@ -10,6 +10,7 @@
                 <th>Title</th>
                 <th>Subtitle</th>
                 <th>Actions</th>
+                <th>Status</th>
             </tr>
         </thead>
         <tbody>
@@ -28,14 +29,16 @@
                         </li>
                     </ul>
                 </td>
+                <td>
+                    {% if article.status %}
+                        <span id="status_{{ article.id }}">publié</span>
+                    {% else %}
+                        <span id="status_{{ article.id }}">non publié</span>
+                    {% endif %}
+                    <a class="button publish" id="publish_{{ article.id }}">modifier</a>
+                </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
-
-    <ul>
-        <li>
-            <a href="{{ path('article_new') }}">Create a new article</a>
-        </li>
-    </ul>
 {% endblock %}

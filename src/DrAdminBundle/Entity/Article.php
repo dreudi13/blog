@@ -57,6 +57,13 @@ class Article
     private $updatedAt;
 
     /**
+     * @var boolean
+     *
+     * @ORM\Column(name="status", type="boolean", nullable=true)
+     */
+    private $status;
+
+    /**
      * categories
      *
      * @ORM\ManyToMany(targetEntity="Category")
@@ -312,5 +319,29 @@ class Article
     public function __toString()
     {
         return $this->title;
+    }
+
+    /**
+     * Set status
+     *
+     * @param boolean $status
+     *
+     * @return Article
+     */
+    public function setStatus($status)
+    {
+        $this->status = $status;
+
+        return $this;
+    }
+
+    /**
+     * Get status
+     *
+     * @return boolean
+     */
+    public function getStatus()
+    {
+        return $this->status;
     }
 }

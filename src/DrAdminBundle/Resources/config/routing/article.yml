@@ -22,3 +22,8 @@ article_delete:
     path:     /{id}/delete
     defaults: { _controller: "DrAdminBundle:Article:delete" }
     methods:  DELETE
+
+article_publish:
+    path:     /publish
+    defaults: { _controller: "DrAdminBundle:Article:publish" }
+    methods:  POST
