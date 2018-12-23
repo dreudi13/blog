@@ -3,7 +3,6 @@
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
 var browserSync = require('browser-sync').create();
-// var myProxy = 'localhost/calyxis-certification';
 var sourcemaps = require('gulp-sourcemaps');
 
 /* TASKS
